@@ -10,6 +10,7 @@ app.use(express.json())
 //     next()
 // })
 app.use("/api/workouts",workoutsRoutes)
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONG_URI)
 .then(()=>{
     const port = process.env.PORT
